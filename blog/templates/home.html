@@ -1,11 +1,44 @@
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        div {
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Song Myung', serif;
+            background-color:lightsteelblue;
+            color:white;
+            width: 600px;
+            margin: 0 auto;
+        }
+        h3 {
+            font-family: 'Song Myung', serif;
+            border-radius: 50%;
+            border: 3px lavender solid;
+            width: 450px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        article {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: lavenderblush;
+            color:darkgray;
+        }
+    </style>
+</head>
+
 <h1>Blog project</h1>
 
-<div class="container">
+<div>
     {% for blog in blogs %}
-        {{blog.title}}
-        {{blog.writer}}
-        {{blog.summary}} 
-        <a href = "{%url 'detail' blog.id %}">...more</a>
+        <article>
+            <h3>{{blog.title}}</h3>
+            {{blog.writer}}
+            {{blog.summary}} <a href = "{%url 'detail' blog.id %}">...more</a>
+        </article>
         <br>
     {% endfor %}
 </div>
