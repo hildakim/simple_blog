@@ -3,13 +3,13 @@ from django.db import models
 # Create your models here.
 
 class Blog(models.Model):
-    title = models.CharField(max_length=200)
-    writer = models.CharField(max_length=100)
-    pub_date = models.DateTimeField()
-    body = models.TextField()
+    food_title = models.CharField(max_length=200)
+    nickname = models.CharField(max_length=100)
+    upload_date = models.DateTimeField()
+    recipe = models.TextField()
 
     def __str__(self):
-        return self.title 
+        return self.food_title 
 
     def summary(self):
-        return self.body[:100]
+        return self.recipe[:100]

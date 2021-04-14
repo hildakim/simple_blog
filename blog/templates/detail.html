@@ -6,34 +6,44 @@
     <style>
         div {
             text-align: center;
+            margin: 0 auto;
         }
-        h1 {
+        table{
+            text-align: center;
+            margin: 0 auto;
+            border: 1px black solid;
+            width: 600px;
+        }
+        th {
             font-family: 'Song Myung', serif;
             background-color:lightsteelblue;
             color:white;
-            width: 600px;
-            margin: 0 auto;
+            height: 100px;
+            font-size: 35px;
         }
-        h3 {
-            font-family: 'Song Myung', serif;
-            border-radius: 50%;
-            border: 3px lavender solid;
-            width: 450px;
-            margin: 0 auto;
-            padding: 10px;
-        }
-        article {
+        td{
             font-family: 'Noto Sans KR', sans-serif;
+        }
+        tr, td, table{
+            padding: 5px;
+        }
+        #mainText {
             background-color: lavenderblush;
-            color:darkgray;
         }
     </style>
 </head>
 
 <div>
-    <h1>{{blog.title}}</h1>
-    {{blog.writer}}
-    {{blog.pub_date}}
-    <hr>
-    {{blog.body}}
+    <table>
+        <tr>
+            <th colspan="2">{{recipePost.food_title}}</th>
+        </tr>
+        <tr>
+            <td>{{recipePost.nickname}}</td>
+            <td>{{recipePost.upload_date}}</td>
+        </tr>
+        <tr>
+            <td colspan="2" id="mainText">{{recipePost.recipe}}</td>
+        </tr>
+    </table>
 </div>

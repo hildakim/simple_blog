@@ -8,37 +8,52 @@
             text-align: center;
         }
         h1 {
+            text-align: center;
+            font-family: 'Song Myung', serif;
+            font-size: 50px;
+            background-color: lightgoldenrodyellow;
+            /* color:white; */
+            width: 600px;
+            margin: 15 auto;
+            border: 1px black solid;
+        }
+        table{
+            text-align: center;
+            margin: 10px auto;
+            border: 1px black solid;
+            width: 600px;
+        }
+        th {
             font-family: 'Song Myung', serif;
             background-color:lightsteelblue;
             color:white;
-            width: 600px;
-            margin: 0 auto;
+            width:200px;
+            height: 100px;
+            font-size: 35px;
         }
-        h3 {
-            font-family: 'Song Myung', serif;
-            border-radius: 50%;
-            border: 3px lavender solid;
-            width: 450px;
-            margin: 0 auto;
-            padding: 10px;
-        }
-        article {
+        td{
             font-family: 'Noto Sans KR', sans-serif;
+        }
+        #mainText {
             background-color: lavenderblush;
-            color:darkgray;
         }
     </style>
 </head>
 
-<h1>Blog project</h1>
+<h1>Recipe Blog</h1>
 
 <div>
-    {% for blog in blogs %}
-        <article>
-            <h3>{{blog.title}}</h3>
-            {{blog.writer}}
-            {{blog.summary}} <a href = "{%url 'detail' blog.id %}">...more</a>
-        </article>
-        <br>
+    {% for post in allPost %}
+    <table>
+        <tr>
+            <th rowspan="2">{{post.food_title}}</th>
+            <td>{{post.nickname}}</td>
+        </tr>
+        <tr>
+            <td id="mainText">{{post.summary}}<a href = "{%url 'detail' post.id %}">...더보기</a></td>
+        </tr>
+    </table>
     {% endfor %}
+
+
 </div>
