@@ -1,0 +1,11 @@
+<h1>Blog project</h1>
+
+<div class="container">
+    {% for blog in blogs %}
+        {{blog.title}}
+        {{blog.writer}}
+        {{blog.summary}} 
+        <a href = "{%url 'detail' blog.id %}">...more</a>
+        <br>
+    {% endfor %}
+</div>
