@@ -42,8 +42,8 @@
             <td>{{recipePost.nickname}}</td>
             <td>{{recipePost.upload_date}}</td>
         </tr>
-        <tr>
-            <td colspan="2" id="mainText">{{recipePost.recipe}}</td>
+        <tr> 
+            <td colspan="2" id="mainText">{{recipePost.recipe | linebreaks }}</td>
         </tr>
     </table>
 </div>
