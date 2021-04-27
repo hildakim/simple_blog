@@ -34,6 +34,8 @@
     </style>
 </head>
 
+{% extends 'base.html' %}
+{% block content %}
 <div>
     <table>
         <tr>
@@ -50,3 +52,4 @@
     <a href="{%url 'edit' recipePost.id%}">edit</a>
     <a href="{%url 'delete' recipePost.id%}">delete</a>
 </div>
+{% endblock %}

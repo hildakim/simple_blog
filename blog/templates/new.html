@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+
 <h1>Write Your recipe</h1>
 
 <form action="{%url 'create'%}" method="post">
@@ -7,3 +10,5 @@
     레시피: <textarea name="body" id="" cols="30" rows="10"></textarea><br>
     <button type="submit"> submit </button>
 </form>
+
+{% endblock %}

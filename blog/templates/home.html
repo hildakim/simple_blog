@@ -40,6 +40,9 @@
     </style>
 </head>
 
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>Recipe Blog</h1>
 <div>
     <a href="{%url 'new'%}">write blog</a>
@@ -57,6 +60,5 @@
         </tr>
     </table>
     {% endfor %}
-
-
 </div>
+{% endblock %}
